@@ -19,9 +19,9 @@ spec:
     spec:
       project: acs-policies
       source:
-        repoURL: https://github.com/redhatryan/acs-hub-bootstrap.git
+        repoURL: https://github.com/redhatryan/cluster-config.git
         targetRevision: main
-        path: resources/03-policies
+        path: bootstrap/overlays/{{ fromClusterClaim "acs" }}
       destination:
         namespace: openshift-gitops
         server: "{{server}}"
