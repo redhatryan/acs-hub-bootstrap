@@ -10,7 +10,7 @@ spec:
     - requiredClusterSelector:
         labelSelector:
           matchExpressions:
-            - key: name
-              operator: In
+            - key: acs
+              operator: Exists
               values:
-                - "acs-hub"
+                - []
