@@ -10,4 +10,5 @@ spec:
     - requiredClusterSelector:
         labelSelector:
           matchExpressions:
-            - { key: acs, operator: Exists, values: [] }
+          - key: gitops
+            operator: Exists
