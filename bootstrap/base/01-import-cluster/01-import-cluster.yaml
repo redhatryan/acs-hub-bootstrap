@@ -15,8 +15,8 @@ spec:
   template:
     metadata:
       name: import-cluster-{{name}}
-      labels:
-        velero.io/exclude-from-backup: "true"
+    #  labels:
+    #    velero.io/exclude-from-backup: "true"
     spec:
       project: acs-import
       syncPolicy:
