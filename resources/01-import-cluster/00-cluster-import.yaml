@@ -56,28 +56,28 @@ type: Opaque
 #    remoteRef:
 #      key: CLUSTER_API_TOKEN
 
-apiVersion: agent.open-cluster-management.io/v1
-kind: KlusterletAddonConfig
-metadata:
-  annotations:
-    argocd.argoproj.io/sync-wave: "4"
-  name: acs-hub
-  namespace: acs-hub
-spec:
-  clusterName: acs-hub
-  clusterNamespace: acs-hub
-  clusterLabels:
-    name: acs-hub
-    cloud: Other
-    vendor: OpenShift
-    cluster.open-cluster-management.io/clusterset: gitops-clusters
-  applicationManager:
-    enabled: true
-  policyController:
-    enabled: true
-  searchCollector:
-    enabled: true
-  certPolicyController:
-    enabled: true
-  iamPolicyController:
-    enabled: true
+#apiVersion: agent.open-cluster-management.io/v1
+#kind: KlusterletAddonConfig
+#metadata:
+#  annotations:
+#    argocd.argoproj.io/sync-wave: "4"
+#  name: acs-hub
+#  namespace: acs-hub
+#spec:
+#  clusterName: acs-hub
+#  clusterNamespace: acs-hub
+#  clusterLabels:
+#    name: acs-hub
+#    cloud: Other
+#    vendor: OpenShift
+#    cluster.open-cluster-management.io/clusterset: gitops-clusters
+#  applicationManager:
+#    enabled: true
+#  policyController:
+#    enabled: true
+#  searchCollector:
+#    enabled: true
+#  certPolicyController:
+#    enabled: true
+#  iamPolicyController:
+#    enabled: true
