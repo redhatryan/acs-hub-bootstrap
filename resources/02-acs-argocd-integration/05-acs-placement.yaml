@@ -11,7 +11,4 @@ spec:
   - requiredClusterSelector:
       labelSelector:
         matchExpressions:
-        - key: name
-          operator: "In"
-          values:
-          - acs-hub
+        - - { key: acs, operator: Exists, values: [] }
