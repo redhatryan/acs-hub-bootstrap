@@ -4,4 +4,4 @@ commonAnnotations:
   argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
 resources:
 - 00-policies-app-project.yaml
-# - ./02-policies.yaml
+- 01-policies.yaml
