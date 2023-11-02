@@ -22,7 +22,7 @@ spec:
       source:
         repoURL: https://github.com/redhatryan/acs-hub-bootstrap.git
         targetRevision: main
-        path: resources/02-acm-argocd-integration
+        path: resources/02-acs-argocd-integration
       destination:
         server: https://kubernetes.default.svc
 
