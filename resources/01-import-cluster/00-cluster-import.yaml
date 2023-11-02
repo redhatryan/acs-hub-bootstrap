@@ -50,7 +50,7 @@ spec:
     creationPolicy: Owner
   dataFrom:
   - extract:
-      token: CLUSTER_API_TOKEN
+      key: CLUSTER_API_TOKEN
 ---
 apiVersion: agent.open-cluster-management.io/v1
 kind: KlusterletAddonConfig
