@@ -10,7 +10,4 @@ spec:
     - requiredClusterSelector:
         labelSelector:
           matchExpressions:
-            - key: acs
-              operator: Exists
-              values:
-                - []
+            - { key: acs, operator: Exists, values: [] }
