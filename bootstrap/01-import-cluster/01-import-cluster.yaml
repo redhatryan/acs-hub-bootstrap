@@ -1,0 +1,31 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: import-openshift-cluster
+  namespace: openshift-gitops
+spec:
+  generators:
+    - clusterDecisionResource:
+        configMapRef: acs-placement
+        labelSelector:
+          matchLabels:
+            cluster.open-cluster-management.io/placement: acs-placement
+        requeueAfterSeconds: 180
+  template:
+    metadata:
+      name: import-cluster-{{name}}
+      labels:
+        velero.io/exclude-from-backup: "true"
+    spec:
+      project: acs-import
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+      source:
+        repoURL: https://github.com/redhatryan/acs-hub-bootstrap.git
+        targetRevision: main
+        path: resources/01-import-cluster
+      destination:
+        server: https://kubernetes.default.svc
