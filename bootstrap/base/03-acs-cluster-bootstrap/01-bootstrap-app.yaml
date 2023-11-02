@@ -21,7 +21,7 @@ spec:
       source:
         repoURL: https://github.com/redhatryan/cluster-config.git
         targetRevision: main
-        path: bootstrap/overlays/{{ fromClusterClaim "acs" }}
+        path: bootstrap/overlays/local.acs
       destination:
         namespace: openshift-gitops
         server: "{{server}}"
