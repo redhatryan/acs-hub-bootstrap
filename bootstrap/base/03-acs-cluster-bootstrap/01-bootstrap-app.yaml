@@ -9,7 +9,7 @@ spec:
         configMapRef: acm-placement
         labelSelector:
           matchLabels:
-            cluster.open-cluster-management.io/placement: acm-placement
+            cluster.open-cluster-management.io/placement: gitops-clusters
         requeueAfterSeconds: 180
   template:
     metadata:
