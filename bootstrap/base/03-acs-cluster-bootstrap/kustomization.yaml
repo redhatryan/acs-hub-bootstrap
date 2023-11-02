@@ -4,4 +4,4 @@ commonAnnotations:
   argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
 resources:
 - 00-bootstrap-app-project.yaml
-- 01-policies.yaml
+- 01-bootstrap-app.yaml
