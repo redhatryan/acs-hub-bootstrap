@@ -26,7 +26,7 @@ spec:
         path: bootstrap/overlays/acs.hub
       destination:
         namespace: openshift-gitops
-        server: https://api.acs.etbit.io:6443
+        server: https://kubernetes.default.svc
       syncPolicy:
         automated:
           selfHeal: true
