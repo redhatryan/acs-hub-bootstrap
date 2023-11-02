@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: acs-policies
+  name: acs-cluster-config-bootstrap
   namespace: openshift-gitops
 spec:
   generators:
@@ -13,11 +13,11 @@ spec:
         requeueAfterSeconds: 180
   template:
     metadata:
-      name: policies-{{name}}
+      name: acs-bootstrap-{{name}}
     #  labels:
     #    velero.io/exclude-from-backup: "true"
     spec:
-      project: acs-policies
+      project: acs-bootstrap
       source:
         repoURL: https://github.com/redhatryan/cluster-config.git
         targetRevision: main
