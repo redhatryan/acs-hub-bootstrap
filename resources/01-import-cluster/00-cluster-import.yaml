@@ -29,28 +29,31 @@ metadata:
   namespace: acs-hub
 stringData:
   autoImportRetry: "2"
-  token: cluster-api-token
+  #Figure out secret later
+  #token: cluster-api-token
+  token: sha256~B0LIROfABnt6xTWBHLJW_XIrqDY6LNA2EdY00JjSBRI
   server: https://api.acs.etbit.io:6443
 type: Opaque
 ---
-apiVersion: external-secrets.io/v1beta1
-kind: ExternalSecret
-metadata:
-  annotations:
-    argocd.argoproj.io/sync-wave: "0"
-  name: cluster-api-token
-  namespace: acs-hub
-spec:
-  refreshInterval: 1h
-  secretStoreRef:
-    kind: ClusterSecretStore
-    name: doppler-cluster
-  target:
-    name: auto-import-secret
-    creationPolicy: Owner
-  dataFrom:
-  - extract:
-      key: CLUSTER_API_TOKEN
+#apiVersion: external-secrets.io/v1beta1
+#kind: ExternalSecret
+#metadata:
+#  annotations:
+#    argocd.argoproj.io/sync-wave: "0"
+#  name: cluster-api-token
+#  namespace: acs-hub
+#spec:
+#  refreshInterval: 1h
+#  secretStoreRef:
+#    kind: ClusterSecretStore
+#    name: doppler-cluster
+#  target:
+#    name: auto-import-secret
+#    creationPolicy: Owner
+#  data:
+#  - secretKey:
+#    remoteRef:
+#      key: CLUSTER_API_TOKEN
 ---
 apiVersion: agent.open-cluster-management.io/v1
 kind: KlusterletAddonConfig
