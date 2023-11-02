@@ -24,5 +24,5 @@ spec:
         targetRevision: main
         path: resources/02-acs-argocd-integration
       destination:
-        server: https://kubernetes.default.svc
+        server: https://api.acs.etbit.io:6443
 

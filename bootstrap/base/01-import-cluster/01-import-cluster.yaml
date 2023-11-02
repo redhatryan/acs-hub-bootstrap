@@ -28,4 +28,4 @@ spec:
         targetRevision: main
         path: resources/01-import-cluster
       destination:
-        server: https://kubernetes.default.svc
+        server: https://api.acs.etbit.io:6443
