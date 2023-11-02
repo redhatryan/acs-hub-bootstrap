@@ -6,4 +6,4 @@ commonAnnotations:
 resources:
 - ../base/01-import-cluster
 - ../base/02-acs-argocd-integration
-- ../base/03-policies
+- ../base/03-acs-cluster-bootstrap
