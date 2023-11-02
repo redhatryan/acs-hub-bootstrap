@@ -3,6 +3,8 @@ kind: ApplicationSet
 metadata:
   name: acs-cluster-config-bootstrap
   namespace: openshift-gitops
+  labels:
+    gitops.ownedBy: acs-cluster-config
 spec:
   generators:
     - clusterDecisionResource:
