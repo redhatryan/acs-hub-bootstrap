@@ -15,11 +15,11 @@ spec:
         requeueAfterSeconds: 180
   template:
     metadata:
-      name: acs-bootstrap-{{name}}
+      name: acs-cluster-config
     #  labels:
     #    velero.io/exclude-from-backup: "true"
     spec:
-      project: acs-bootstrap
+      project: acs-cluster-config
       source:
         repoURL: https://github.com/redhatryan/cluster-config.git
         targetRevision: main
