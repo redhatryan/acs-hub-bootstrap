@@ -8,8 +8,9 @@ spec:
   clusterResourceWhitelist:
   - group: '*'
     kind: '*'
+  description: Project for ACS bootstrap cluster app
   destinations:
   - namespace: '*'
-    server: '*'
+    server: https://kubernetes.default.svc
   sourceRepos:
-  - '*'
+  - https://github.com/redhatryan/cluster-config
