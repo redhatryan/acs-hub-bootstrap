@@ -4,7 +4,7 @@ kind: ManagedClusterSetBinding
 metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "5"
-  name: gitops-clusters
+  name: acs-clusters
   namespace: openshift-gitops
 spec:
-  clusterSet: gitops-clusters
+  clusterSet: acs-clusters

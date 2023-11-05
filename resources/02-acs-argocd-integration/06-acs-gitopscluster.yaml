@@ -4,7 +4,7 @@ kind: GitOpsCluster
 metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "6"
-  name: gitops-clusters
+  name: acs-clusters
   namespace: openshift-gitops
 spec:
   argoServer:
@@ -13,5 +13,5 @@ spec:
   placementRef:
     kind: Placement
     apiVersion: cluster.open-cluster-management.io/v1beta1
-    name: gitops-clusters
+    name: acs-clusters
     namespace: openshift-gitops
