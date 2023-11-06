@@ -1,14 +1,16 @@
 apiVersion: cluster.open-cluster-management.io/v1beta1
 kind: Placement
 metadata:
-  name: acs-placement
+  name: placement-policy-acs
   namespace: openshift-gitops
 spec:
   clusterSets:
-    - acs-clusters
+  - acs-clusters
   predicates:
     - requiredClusterSelector:
         labelSelector:
           matchExpressions:
-          - key: acs
-            operator: Exists
+            - key: acs-gitops
+              operator: In
+              values:
+                - local.acs

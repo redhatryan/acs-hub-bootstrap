@@ -1,0 +1,29 @@
+---
+apiVersion: cluster.open-cluster-management.io/v1beta1
+kind: Placement
+metadata:
+  name: placement-policy-acs-gitops
+  namespace: openshift-gitops
+spec:
+  clusterSets:
+  - global
+  predicates:
+  - requiredClusterSelector:
+      labelSelector:
+        matchExpressions:
+        - key: gitops
+          operator: Exists
+---
+apiVersion: policy.open-cluster-management.io/v1
+kind: PlacementBinding
+metadata:
+  name: binding-policy-acs-gitops
+  namespace: acm-policies
+placementRef:
+  apiGroup: cluster.open-cluster-management.io
+  kind: Placement
+  name: placement-policy-acs-gitops
+subjects:
+- apiGroup: policy.open-cluster-management.io
+  kind: PolicySet
+  name: acs-gitops

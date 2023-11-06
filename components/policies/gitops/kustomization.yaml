@@ -1,0 +1,7 @@
+namespace: acm-policies
+
+resources:
+- acs-placement.yaml
+
+generators:
+- acs-policy-generator-config.yaml

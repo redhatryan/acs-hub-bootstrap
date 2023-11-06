@@ -1,0 +1,25 @@
+apiVersion: policy.open-cluster-management.io/v1
+kind: PolicyGenerator
+metadata:
+  name: acs-policy-generator
+policyDefaults:
+  namespace: acm-policies
+  remediationAction: enforce
+placementBindingDefaults:
+  name: "binding-policy-acs-gitops"
+policies:
+  - name: policy-acs-bootstrap
+    manifests:
+      - path: manifests/acs-bootstrap/base/
+  - name: policy-acs-gitops-cluster
+    manifests:
+      - path: manifests/gitops-cluster/base
+policySets:
+  - name: "acs-gitops"
+    description: "Policy for bootstrapping ACS cluster with gitops"
+    policies:
+      - policy-acs-bootstrap
+      - policy-acs-gitops-cluster
+    generatePolicySetPlacement: false
+    placement:
+      name: placement-policy-acs-gitops

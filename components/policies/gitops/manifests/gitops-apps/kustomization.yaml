@@ -1,0 +1,3 @@
+resources:
+- acs-bootstrap-appproject.yaml
+- acs-bootstrap-app.yaml

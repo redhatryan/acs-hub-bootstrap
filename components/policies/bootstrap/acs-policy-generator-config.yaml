@@ -1,0 +1,21 @@
+apiVersion: policy.open-cluster-management.io/v1
+kind: PolicyGenerator
+metadata:
+  name: acs-bootstrap-policy-generator
+policyDefaults:
+  namespace: openshift-gitops
+  remediationAction: enforce
+placementBindingDefaults:
+  name: "binding-policy-acs-bootstrap"
+policies:
+  - name: policy-eso-secret-store-acs
+    manifests:
+      - path: eso/base/
+policySets:
+  - name: "acs-bootstrap"
+    description: "Policy for bootstrapping ACS cluster with gitops"
+    policies:
+      - policy-eso-secret-store-acs
+    generatePolicySetPlacement: false
+    placement:
+      name: placement-policy-acs-bootstrap
