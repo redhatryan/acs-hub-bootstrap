@@ -10,10 +10,10 @@ placementBindingDefaults:
 policies:
   - name: policy-acs-bootstrap
     manifests:
-      - path: manifests/acs-bootstrap/base/
+      - path: manifests/gitops-apps
   - name: policy-acs-gitops-cluster
     manifests:
-      - path: manifests/gitops-cluster/base
+      - path: manifests/gitops-cluster
 policySets:
   - name: "acs-gitops"
     description: "Policy for bootstrapping ACS cluster with gitops"
