@@ -5,9 +5,8 @@ SLEEP_SECONDS=30
 
 echo ""
 
-echo "Installing policies to bootstrap ACS"
+echo "Installing policies on ACM hub to bootstrap ACS"
 
-kustomize build bootstrap/secrets/base | oc apply -f -
 kustomize build bootstrap/policies/overlays/acs/bootstrap --enable-alpha-plugins | oc apply -f -
 kustomize build bootstrap/policies/overlays/acs/base --enable-alpha-plugins | oc apply -f -
 
