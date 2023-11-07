@@ -6,12 +6,6 @@ I use in my homelab environment. It is referenced by the [cluster-config](https:
 From the perspective of bootstrapping the Hub there are a couple of different ways to go. You could
 manually install OpenShift GitOps and have it bootstrap everything on the Hub, but the below workflow was created for consistency as my homelab scales. To run the workloads I'm needing for ACS, I'm unable to concurrently run OpenShift GitOps and ACS on my Intel NUC due to compute limitations, so I use a GitOps Cluster configured on the RHACM hub to leverage the ArgoCD instance installed there.
 
-### Bootstrap Process - ACS Local
-
-The bootstrap process, encapsulated in the `bootstrap-acs-local.sh` script, is as follows:
-
-1. Locally, on the newly provisioned ACS server, install secrets needed for bootstrapping ACS from the ACM hub
-
 ### Bootstrap Process - ACS Remote
 
 The bootstrap process, encapsulated in the `bootstrap-acs-remote.sh` script, deploys RHACM policies to:
@@ -26,6 +20,13 @@ The bootstrap process, encapsulated in the `bootstrap-acs-remote.sh` script, dep
 4. Label the Hub cluster, `acs-hub`, with the label `acs-gitops=local.acs`. This triggers the
 GitOps policy we deployed in step #6 to deploy the bootstrap application pointing to the repo and path needed for this cluster, i.e.
 `local.acs`
+
+### Bootstrap Process - ACS Local
+
+The bootstrap process, encapsulated in the `bootstrap-acs-local.sh` script, is as follows:
+
+1. Locally, on the newly provisioned ACS server, install secrets needed for bootstrapping ACS from the ACM hub after running the `bootstrap-acs-remote.sh` script.
+
 
 At this point the GitOps operator on the RHACM hub deploys everything the ACS Hub cluster requires including storage, operators, etc
 as well as other ACS components. In particular, the components that the script deployed (Hub + Policies) have

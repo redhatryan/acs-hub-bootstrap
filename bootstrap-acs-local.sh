@@ -12,5 +12,3 @@ echo ""
 echo "Installing secrets on local ACS hub to bootstrap ACS with"
 
 kustomize build bootstrap/secrets/base | oc apply -f -
-
-echo "Proceed to import the ACS Hub (acs-hub) into the RHACM hub cluster"
