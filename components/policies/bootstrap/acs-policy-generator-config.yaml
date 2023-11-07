@@ -19,6 +19,7 @@ policySets:
     description: "Policy for bootstrapping ACS cluster with gitops"
     policies:
       - policy-eso-secret-store-acs
+      - policy-rbac-acs
     generatePolicySetPlacement: false
     placement:
       name: placement-policy-acs-bootstrap
