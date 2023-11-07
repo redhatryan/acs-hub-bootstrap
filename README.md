@@ -6,6 +6,12 @@ I use in my homelab environment. It is referenced by the [cluster-config](https:
 From the perspective of bootstrapping the Hub there are a couple of different ways to go. You could
 manually install OpenShift GitOps and have it bootstrap everything on the Hub, but the below workflow was created for consistency as my homelab scales. To run the workloads I'm needing for ACS, I'm unable to concurrently run OpenShift GitOps and ACS on my Intel NUC due to compute limitations, so I use a GitOps Cluster configured on the RHACM hub to leverage the ArgoCD instance installed there.
 
+### Steps
+
+1. Import ACS cluster to ACM hub
+2. Log into ACM hub and run `bootstrap-acs-remote.sh` 
+3. Log into ACS hub and run `bootstrap-acs-local.sh`
+
 ### Bootstrap Process - ACS Remote
 
 The bootstrap process, encapsulated in the `bootstrap-acs-remote.sh` script, deploys RHACM policies to:
