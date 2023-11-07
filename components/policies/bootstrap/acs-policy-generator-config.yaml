@@ -11,6 +11,9 @@ policies:
   - name: policy-eso-secret-store-acs
     manifests:
       - path: eso/base/
+  - name: policy-rbac-acs
+    manifests:
+      - path: rbac/overlays/
 policySets:
   - name: "acs-bootstrap"
     description: "Policy for bootstrapping ACS cluster with gitops"
