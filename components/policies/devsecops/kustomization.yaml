@@ -1,4 +1,4 @@
-namespace: openshift-gitops
+namespace: acm-policies
 
 resources:
 - devsecops-placement.yaml
