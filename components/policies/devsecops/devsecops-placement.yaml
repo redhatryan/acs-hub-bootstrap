@@ -1,9 +1,8 @@
----
 apiVersion: cluster.open-cluster-management.io/v1beta1
 kind: Placement
 metadata:
-  name: placement-policy-acs-gitops
-  namespace: acm-policies
+  name: placement-policy-devsecops
+  namespace: acm-placement
 spec:
   clusterSets:
   - global
@@ -17,13 +16,13 @@ spec:
 apiVersion: policy.open-cluster-management.io/v1
 kind: PlacementBinding
 metadata:
-  name: binding-policy-acs-gitops
+  name: binding-policy-devsecops
   namespace: acm-policies
 placementRef:
   apiGroup: cluster.open-cluster-management.io
   kind: Placement
-  name: placement-policy-acs-gitops
+  name: placement-policy-devsecops
 subjects:
 - apiGroup: policy.open-cluster-management.io
   kind: PolicySet
-  name: acs-gitops
+  name: devsecops-bootstrap

@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: devsecops-bootstrap
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: openshift-gitops
+    server: https://kubernetes.default.svc
+  project: bootstrap
+  source:
+    path: ansible-bootstrap/job
+    repoURL: https://github.com/redhatryan/acs-devsecops.git
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
+  ignoreDifferences:
+    - group: argoproj.io
+      kind: Application
+      managedFieldsManagers:
+        - argocd-server
+      jsonPointers:
+        - /spec/syncPolicy/automated

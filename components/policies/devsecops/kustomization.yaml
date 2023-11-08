@@ -1,0 +1,7 @@
+namespace: openshift-gitops
+
+resources:
+- devsecops-placement.yaml
+
+generators:
+- devsecops-policy-generator-config.yaml

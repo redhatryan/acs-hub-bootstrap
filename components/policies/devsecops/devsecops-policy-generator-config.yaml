@@ -1,0 +1,21 @@
+apiVersion: policy.open-cluster-management.io/v1
+kind: PolicyGenerator
+metadata:
+  name: devsecops-policy-generator
+policyDefaults:
+  namespace: acm-policies
+  remediationAction: enforce
+placementBindingDefaults:
+  name: "binding-policy-devsecops"
+policies:
+  - name: policy-bootstrap-devsecops
+    manifests:
+      - path: base
+policySets:
+  - name: "devsecops-bootstrap"
+    description: "Policy for bootstrapping DevSecOps"
+    policies:
+      - policy-bootstrap-devsecops
+    generatePolicySetPlacement: false
+    placement:
+      name: placement-policy-devsecops
