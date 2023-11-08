@@ -1,5 +1,6 @@
 resources:
 - ../base
+- acs-hub-crb.yaml
 
 patches:
 - patch: |-
