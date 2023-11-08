@@ -10,7 +10,7 @@ spec:
   description: Project for devsecops bootstrap app
   destinations:
   - namespace: '*'
-    server: https://kubernetes.default.svc
+    server: https://api.acs.etbit.io:6443
   sourceRepos:
   - https://github.com/redhatryan/cluster-config
   - https://github.com/redhat-cop/gitops-catalog
