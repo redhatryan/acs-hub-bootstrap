@@ -9,7 +9,7 @@ spec:
     server: https://kubernetes.default.svc
   project: devsecops-bootstrap
   source:
-    path: ansible-bootstrap/job
+    path: ansible-gitops/base
     repoURL: https://github.com/redhatryan/acs-devsecops.git
     targetRevision: main
   syncPolicy:
