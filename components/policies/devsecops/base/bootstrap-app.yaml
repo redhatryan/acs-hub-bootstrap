@@ -6,7 +6,7 @@ metadata:
 spec:
   destination:
     namespace: openshift-gitops
-    server: https://api.acs.etbit.io:6443
+    server: https://kubernetes.default.svc
   project: devsecops-bootstrap
   source:
     path: ansible-gitops/base
